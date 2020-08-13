@@ -1,0 +1,34 @@
+{
+  "name": "notificaiton-demo-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "tsc": "tsc",
+    "copyfiles": "copyfiles -u 1 -e \"**/*.ts\" \"src/**/*\" dist",
+    "prepush": "npm-run-all lint tsc",
+    "build": "npm-run-all lint tsc copyfiles",
+    "start": "node ./dist/startup.js",
+    "dev-finalize-start": "npm-run-all build start",
+    "dev-start": "nodemon --watch src -e ts,ejs,graphql --exec npm run dev-finalize-start"
+  },
+  "author": "JamieS1211",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "firebase-admin": "^8.13.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.2",
+    "@types/node": "^12.12.17",
+    "@typescript-eslint/eslint-plugin": "^2.13.0",
+    "@typescript-eslint/parser": "^2.13.0",
+    "copyfiles": "^2.1.1",
+    "eslint": "^6.8.0",
+    "nodemon": "^2.0.4",
+    "npm-run-all": "^4.1.5",
+    "ts-node": "^8.5.2",
+    "typescript": "^3.8.3"
+  }
+}
