@@ -129,12 +129,7 @@ module.exports = {
         "id-blacklist": "off",
         "id-match": "error",
         "max-classes-per-file": ["error", 1],
-        "max-len": [
-            "error",
-            {
-                code: 160
-            }
-        ],
+        "max-len": "off",
         "new-parens": "error",
         "no-bitwise": "error",
         "no-caller": "error",
